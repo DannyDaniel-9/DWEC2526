@@ -1,0 +1,67 @@
+
+
+/* Estilo para los botones */
+button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer;
+    margin: 0 10px 30px 10px; /* Margen inferior para separar de las imágenes */
+    transition: all 0.3s ease; /* Transición suave para hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+button:hover {
+    transform: translateY(9px); /* Eleva el botón al pasar el ratón */
+    box-shadow: 0 6px 19px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+}
+
+/* Usamos selectores de atributos para dar color, 
+  ya que no podemos añadir clases en el HTML 
+*/
+button[onclick="mostrarTrump()"] {
+    background-color: #28a745; /* Verde */
+}
+button[onclick="mostrarTrump()"]:hover {
+    background-color: #218838; /* Verde oscuro */
+}
+
+button[onclick="ocultaTrump()"] {
+    background-color: #dc3545; /* Rojo */
+}
+button[onclick="ocultaTrump()"]:hover {
+    background-color: #c82333; /* Rojo oscuro */
+}
+
+html {
+    
+    cursor: url('trump-icon-26-removebg-preview.png'), auto;
+}
+
+.imagen1 {
+    background-image: url('pedrosanchez.png');
+    width: 900px;
+    height: 1000px;
+    margin-bottom: 20px; 
+    
+   
+}
+
+.imagen2 {
+    background-image: url('trump.png');
+    width: 1200px; 
+    height: 1200px; 
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    
+    background-size: cover; 
+    
+    transition: opacity 0.3s ease; 
+    position: absolute;
+    margin-top: -830px;
+    margin-left: 420px;
+}
