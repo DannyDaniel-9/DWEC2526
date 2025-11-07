@@ -1,0 +1,32 @@
+.figura{
+    width: 300px;
+    height: 300px;    
+    position: absolute;
+    transition: all 0.1s;
+    top: 900;
+    left: 500;
+    background-size: 190px;
+    background-repeat: no-repeat;
+}
+.figura2{
+    width: 300px;
+    height: 300px;    
+    position: absolute;
+    transition: all 0.1s;
+    top: 900;
+    left: 500;
+    background-size: 190px;
+    background-repeat: no-repeat;
+}
+body{    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.poop {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  
+}
