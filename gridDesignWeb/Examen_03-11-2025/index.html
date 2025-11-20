@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen 03 - 11 - 25</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <label for="xPosition" draggable="false" >Posicion en el eje X</label>
+    <input id ="xPosition" draggable="false" type="text">
+    <label for="yPosition" draggable="false">Posicion en el eje Y</label>
+    <input id ="yPosition" draggable="false" type="text">
+
+     
+
+    <div class="figura" id="resultado" onclick="smashFly()">
+         
+    </div>
+    <div class="figura2" id="resultado2" onclick="smashFly2()">
+
+    </div>
+               
+    <input type="button" value="Posicionar" onclick="posicionar()" draggable="false">
+    <input type="button" value="Randomizer" onclick="randomizar()" draggable="false">
+
+   <div class="poop" id="centerPoop" draggable="false"><img class="cacaGif" src="caca.gif" draggable="false" width="500px"></div>
+   <img src="" class="reloj" id="tiempo" draggable="false">
+
+    <script src="script.js" defer></script>
+</body>
+</html>

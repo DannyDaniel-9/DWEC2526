@@ -1,0 +1,464 @@
+.ag-format-container {
+  width: 100%; /* Ocupa el espacio disponible */
+  max-width: 1142px; /* Tu ancho máximo original */
+  
+  /* CAMBIO CLAVE: */
+  margin-left: 360px; /* Empuja todo 320px a la derecha para salvar el logo */
+  /* (Si ves que es mucho o poco, cambia este número a 280px o 350px) */
+  
+  padding: 0 15px;
+}
+
+body {
+  background-color: white;
+}
+
+.ag-courses_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 50px 0;
+}
+
+.ag-courses_item {
+  /* CAMBIO: De 33.333% a 25% para que quepan 4 en fila (más pequeñas) */
+  -ms-flex-preferred-size: calc(25% - 30px);
+  flex-basis: calc(25% - 30px);
+
+  margin: 0 16px 30px;
+  overflow: hidden;
+  border-radius: 28px;
+}
+.ag-courses-item_link {
+  display: block;
+  padding: 30px 20px;
+  background-color: #121212;
+  overflow: hidden;
+  position: relative;
+}
+
+.ag-courses-item_link:hover,
+.ag-courses-item_link:hover .ag-courses-item_date {
+  text-decoration: none;
+  color: #FFF;
+}
+
+.ag-courses-item_link:hover .ag-courses-item_bg {
+  -webkit-transform: scale(10);
+  -ms-transform: scale(10);
+  transform: scale(10);
+}
+
+.ag-courses-item_title {
+  min-height: 60px; /* Reducido también */
+  margin: 0 0 6px;
+  overflow: hidden;
+  font-weight: bold;
+  
+  /* CAMBIO: Letra más pequeña */
+  font-size: 19px; 
+  
+  color: #FFF;
+  z-index: 2;
+  position: relative;
+}
+
+.ag-courses-item_date-box {
+  font-size: 18px;
+  color: #FFF;
+  z-index: 2;
+  position: relative;
+}
+
+.ag-courses-item_date {
+  font-weight: bold;
+  color: #f9b234;
+  -webkit-transition: color .5s ease;
+  -o-transition: color .5s ease;
+  transition: color .5s ease;
+}
+
+.ag-courses-item_bg {
+  height: 128px;
+  width: 128px;
+  background-color: #f9b234;
+  z-index: 1;
+  position: absolute;
+  top: -75px;
+  right: -75px;
+  border-radius: 50%;
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.ag-courses_item:nth-child(2n) .ag-courses-item_bg {
+  background-color: #3ecd5e;
+}
+
+.ag-courses_item:nth-child(3n) .ag-courses-item_bg {
+  background-color: #e44002;
+}
+
+.ag-courses_item:nth-child(4n) .ag-courses-item_bg {
+  background-color: #952aff;
+}
+
+.ag-courses_item:nth-child(5n) .ag-courses-item_bg {
+  background-color: #cd3e94;
+}
+
+.ag-courses_item:nth-child(6n) .ag-courses-item_bg {
+  background-color: #4c49ea;
+}
+
+@media only screen and (max-width: 979px) {
+  .ag-courses_item {
+    -ms-flex-preferred-size: calc(50% - 30px);
+    flex-basis: calc(50% - 30px);
+  }
+  .ag-courses-item_title {
+    font-size: 17px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ag-format-container {
+    width: 96%;
+  }
+}
+
+@media only screen and (max-width: 639px) {
+  .ag-courses_item {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+  }
+  .ag-courses-item_title {
+    min-height: 72px;
+    line-height: 1;
+    font-size: 24px;
+  }
+  .ag-courses-item_link {
+    padding: 22px 40px;
+  }
+  .ag-courses-item_date-box {
+    font-size: 16px;
+  }
+}
+
+.bug img {
+  /* Define el tamaño para todas las imágenes dentro de .bug */
+  width: 100px;
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+.miniaturas img {
+  /* CAMBIO IMPRESCINDIBLE: width 100% en lugar de 310px */
+  width: 100%; 
+  
+  /* CAMBIO: Bajamos la altura de 160px a 130px */
+  height: 130px;     
+  
+  /* Esto asegura que la imagen no se deforme si cambiamos medidas */
+  object-fit: cover; 
+  
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55), 0 4px 12px rgba(0, 0, 0, 0.55);
+  border-radius: 6px;
+  display: block;
+}
+
+.logo img {
+  left: 4.2%;
+  top: 2%;
+  width: 300px;
+  position: absolute;
+}
+
+/* 1. Preparamos el contenedor para que pueda tener capas encima */
+.miniaturas {
+  position: relative;
+  display: inline-block; /* Asegura que el div abrace a la imagen */
+  overflow: hidden;
+  border-radius: 6px; /* El mismo borde que tenías en la img */
+}
+
+/* 2. Convertimos la imagen original a Blanco y Negro */
+.miniaturas img {
+  filter: grayscale(100%); 
+  transition: filter 0.5s ease;
+  display: block; /* Elimina espacios extraños abajo */
+}
+
+/* 3. Creamos la "capa mágica" de color encima de la foto */
+.miniaturas::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  mix-blend-mode: hard-light; 
+  opacity: 0.8; /* Intensidad del color (0 a 1) */
+  border-radius: 6px;
+  pointer-events: none; /* Para que puedas seguir haciendo click */
+  transition: background-color 0.5s ease;
+}
+
+/* (Opcional) Al pasar el ratón, devolvemos el color original de la foto */
+.ag-courses-item_link:hover .miniaturas img {
+  filter: grayscale(0%);
+}
+
+.ag-courses-item_link:hover .miniaturas::after {
+  opacity: 0; /* Desaparece el tinte al hacer hover */
+}
+
+/* Color por defecto (Naranja - igual que tu primer bg) */
+.miniaturas::after {
+  background-color: #f9b234;
+}
+
+/* Tarjeta 2 (Verde) */
+.ag-courses_item:nth-child(2n) .miniaturas::after {
+  background-color: #3ecd5e;
+}
+
+/* Tarjeta 3 (Rojo/Naranja) */
+.ag-courses_item:nth-child(3n) .miniaturas::after {
+  background-color: #e44002;
+}
+
+/* Tarjeta 4 (Morado) */
+.ag-courses_item:nth-child(4n) .miniaturas::after {
+  background-color: #952aff;
+}
+
+/* Tarjeta 5 (Rosa) */
+.ag-courses_item:nth-child(5n) .miniaturas::after {
+  background-color: #cd3e94;
+}
+
+/* Tarjeta 6 (Azul) */
+.ag-courses_item:nth-child(6n) .miniaturas::after {
+  background-color: #4c49ea;
+}
+
+/* Configuración del contenedor del escarabajo */
+.escarabajo-patrulla {
+  position: fixed; /* Se queda fijo en la pantalla aunque hagas scroll */
+  left: 20px;      /* Separación desde la izquierda */
+  bottom: -100px;  /* Empieza escondido debajo de la pantalla */
+  z-index: 800;    /* Encima del fondo pero debajo de menús importantes */
+  width: 60px;     /* Tamaño del escarabajo */
+  animation: patrulla 12s linear infinite;
+}
+
+.escarabajo-patrulla img {
+  width: 130px;
+  display: block;
+  margin-left: 90px;
+}
+
+/* LA ANIMACIÓN COMPLETA */
+@keyframes patrulla {
+  /* --- FASE 1: SUBIDA (Mirando arriba) --- */
+  0% {
+    bottom: -10%; 
+    transform: rotate(0deg); 
+  }
+  45% {
+    bottom: 105%; 
+    transform: rotate(0deg); 
+  }
+
+  /* --- FASE 2: GIRO ARRIBA --- */
+  45.1% {
+    transform: rotate(0deg); 
+  }
+  50% {
+    bottom: 105%; 
+    transform: rotate(180deg); 
+  }
+
+  /* --- FASE 3: BAJADA (Mirando abajo) --- */
+  50.1% {
+    transform: rotate(180deg);
+  }
+  95% {
+    bottom: -10%; 
+    transform: rotate(180deg); 
+  }
+
+  /* --- FASE 4: GIRO ABAJO (Reinicio) --- */
+  95.1% {
+    transform: rotate(180deg);
+  }
+  100% {
+    bottom: -10%;
+    transform: rotate(360deg); 
+  }
+}
+
+/* --- ESTILOS PARA EL CONTENEDOR DE LA ARAÑA CON SU TELARAÑA --- */
+.arana-con-telarana {
+  position: fixed; 
+  right: 50px;     
+  top: -100px;     
+  z-index: 995;    
+  width: 130px;    
+  border-left: 2px solid #888; 
+  animation: aranaDesciende 5s ease-in-out infinite alternate;
+}
+
+/* --- ESTILOS PARA LA IMAGEN DE LA ARAÑA DENTRO DE SU CONTENEDOR --- */
+.arana-con-telarana .arana-img {
+  width: 90px;    
+  height: auto;   
+  display: block; 
+  position: absolute; 
+  bottom: -66px;      
+  left: 0;
+  margin-left: -46px;       
+}
+
+/* --- DEFINICIÓN DE LA ANIMACIÓN DE DESCENSO --- */
+@keyframes aranaDesciende {
+  0% {
+    top: -100px; 
+    height: 0;   
+  }
+  30% { 
+    top: 0px; 
+    height: 0;
+  }
+  100% {
+    top: 0px;    
+    height: 250px; 
+  }
+}
+
+/* RESPONSIVE: Esconder en pantallas pequeñas si molesta */
+@media (max-width: 768px) {
+  .arana-con-telarana {
+    display: none;
+  }
+}
+
+.advertencia-badge {
+  position: absolute;
+  top: 46%;      
+  left: 7%;      
+  width: 220px;    
+  height: 180px;   
+  background-color: #000; 
+  color: #fff;            
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: inherit; 
+  font-weight: bold;
+  font-size: 18px; 
+  line-height: 1.2;
+  z-index: 850; 
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  filter: drop-shadow(10px 10px 0px #000000);
+}
+
+/* Pequeño efecto al pasar el ratón (opcional) */
+.advertencia-badge:hover {
+  transform: scale(1.3) rotate(-5deg); 
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  filter: drop-shadow(15px 15px 0px #000000);
+}
+
+/* --- ESTILOS DEL ESCARABAJO HÉRCULES --- */
+.escarabajo-hercules-patrulla {
+  position: fixed; 
+  top: 550px;      
+  left: 100vw;     
+  z-index: 870;    
+  width: 80px;     
+  height: auto;
+  animation: herculesPatrulla 15s linear infinite;
+}
+
+.escarabajo-hercules-patrulla .hercules-img {
+  width: 130%;
+  display: block;
+  transform: rotate(-90deg); 
+  transition: transform 0.5s ease-in-out; 
+}
+
+/* --- DEFINICIÓN DE LA ANIMACIÓN DE PATRULLA HORIZONTAL --- */
+@keyframes herculesPatrulla {
+  /* 0% - INICIO */
+  0% {
+    left: 100vw; 
+    top: 90%;
+    z-index: -1000;
+    transform: rotate(0deg); 
+  }
+
+  /* 45% - LLEGA AL LÍMITE IZQUIERDO */
+  45% {
+    left: -97px; 
+    transform: rotate(0deg); 
+    z-index: -1000;
+  }
+
+  /* 49% - PRE-GIRO */
+  49% { 
+    left: -97px; 
+    transform: rotate(0deg);
+    z-index: -1000;
+  }
+
+  /* 50% - GIRO */
+  50% {
+    left: -97px; 
+    transform: rotate(180deg); 
+    z-index: -1000;
+  }
+
+  /* 51% - PRE-VIAJE DERECHA */
+  51% {
+    left: -80px; 
+    transform: rotate(180deg);
+    z-index: -1000;
+  }
+
+  /* 95% - LLEGA AL LÍMITE DERECHO */
+  95% {
+    left: 100vw; 
+    transform: rotate(180deg); 
+    z-index: -1000;
+  }
+
+  /* 99% - PRE-GIRO */
+  99% {
+    left: 100vw;
+    transform: rotate(180deg);
+    z-index: -1000;
+  }
+
+  /* 100% - REINICIO */
+  100% {
+    left: 100vw; 
+    transform: rotate(360deg); 
+    z-index: -1000;
+  }
+}
+
+/* Responsive: Esconder en móviles si estorba */
+@media (max-width: 768px) {
+  .escarabajo-hercules-patrulla {
+    display: none;
+  }
+}

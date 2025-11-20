@@ -1,0 +1,51 @@
+.figura{
+    width: 400px;
+    height: 400px;    
+    position: absolute;
+    transition: all 0.2s;
+    top: 900;
+    left: 500;
+    background-size: 200px;
+    background-repeat: no-repeat;
+}
+.figura2{
+    width: 400px;
+    height: 400px;    
+    position: absolute;
+    transition: all 0.2s;
+    top: 900;
+    left: 500;
+    background-size: 200px;
+    background-repeat: no-repeat;
+}
+body{    
+    background-repeat: no-repeat;
+    background-size: cover;    
+}
+
+.poop {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);  
+}
+.cacaGif{
+    user-select: none;
+}
+label{
+    user-select:none;
+}
+input{
+    user-select:none;
+}
+html{
+    user-select: none;
+}
+
+.reloj{
+    width: 300px;
+    height: 300px;
+    top: 70%;
+    left: 80%;
+    position: absolute;
+}

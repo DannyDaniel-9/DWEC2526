@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="formulario">
+<form>
+    <label for="nombre">Nombre:</label>
+    <input id="nombre" type="text">
+<br>
+    <label for="apellidos">Apellidos:</label>
+    <input id="apellidos" type="text">
+<br>
+    <label for="edad">Edad:</label>
+    <input id="edad" type="text">
+<br>
+    <label for="aficiones">Aficiones:</label>
+    <input id="aficiones" type="text">
+<br>
+    <label for="colorPicker">Selecciona color de fondo:</label>
+    <input type="color" id="colorPicker">
+<br>
+
+    <label for="color">Color de sprite:</label>
+    <select id="color"  >
+        <option value="rojo">rojo</option>
+        <option value="verde">verde</option>
+        <option value="azul">azul</option>       
+    </select>
+
+<br>
+    <input type="button" onclick="mandarDatos()" value="Mandar Datos a Servidor"> 
+<br>
+
+   
+    
+</form>
+</div>
+
+<div class="resultado">
+    <div id="resultado"></div>
+</div>
+
+<div id="contenedor">
+<div id="sprite" class="sprite"></div>
+</div>
+
+
+<script src="script.js" defer></script>
+</body>
+</html>
