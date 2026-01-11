@@ -1,0 +1,33 @@
+#contadorFinal{
+    display: flex;
+    border: 3px solid red;
+    font-size: 100px;
+    width: 150px;
+    height: 150px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    border-radius: 26px;
+}
+#contenedorPadre{
+    position: relative;
+    border: 3px solid black;
+    height: 500px;
+    width: 500px;
+    border-radius: 26px;
+    left: 25%;
+}
+#texto{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+}
+#boton{
+    position: absolute;
+    top: 65%;
+    left: 35%;
+    display: none;
+}

@@ -1,0 +1,35 @@
+@font-face{
+  font-family: 'newRodinProB';
+  src: url(/gridDesignWeb/fonts/FOT-NewRodin\ Pro\ B.otf) format('opentype');
+}
+
+html{
+    font-family: 'newRodinProB', sans-serif;
+    font-size: 30px;    
+}
+
+#folio{
+    width: 300px;
+    height: 400px;
+    border: 1px solid black;
+    position: absolute;
+    left: 38%;
+    top: 6%;
+    word-wrap: break-word; 
+    white-space: normal;
+    overflow-y: auto;  /*Scroll vertical activado y horizontal desactivado*/
+    overflow-x: hidden;
+    text-align: justify;
+}
+
+input{
+    font-family: 'newRodinProB', sans-serif;
+    font-size: 15px;
+    margin-left: 9px;
+}
+
+.buttonsContainer{
+    top: 65%;
+    left: 36%;
+    position: absolute;
+}

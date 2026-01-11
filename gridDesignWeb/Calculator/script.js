@@ -29,6 +29,13 @@ function calcular(){
             break;
     }
 
+    if (resultado % 2 == 0) {    
+        document.body.style.backgroundColor = "green";
+    }else{
+        document.body.style.backgroundColor = "blue";
+    }
+
+
     divResultado.innerHTML = resultado ;
     cuadroLogs.innerHTML = mensajeLog;
     cuadroLogs.style.height = alturaMinima + "px";
@@ -42,3 +49,6 @@ function limpiarHistorial(){
     alturaMinima = 20;
     cuadroLogs.style.height = alturaMinima + "px";
 }
+
+
+

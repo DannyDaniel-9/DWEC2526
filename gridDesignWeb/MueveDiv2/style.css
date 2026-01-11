@@ -1,0 +1,71 @@
+@font-face{
+  font-family: '8bit';
+  src: url(../fonts/PressStart2P-vaV7.ttf) format('truetype');
+}
+
+html{
+    font-family: '8bit';    
+}
+
+#character{
+    background-image: url(sprites/galagaLEFT.png);
+    background-size: 90px;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    top: 300px;
+    left: 750px;
+    position: absolute;
+}
+
+#container{
+    left: 17%;
+    border: 3px solid black;
+    width: 1000px;
+    height: 700px;
+    position: absolute;
+}
+
+.enemy{
+    background-image: url(sprites/meteorSprite.png);
+    background-size: 90px;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 500px;
+    left: 300px;
+}
+
+#obstacle2{
+    top: 70px;
+    left: 750px;
+}
+#obstacle3{
+    top: 300px;
+    left: 350px;
+}
+#obstacle4{
+    top: 90px;
+    left: 650px;
+}
+#obstacle5{
+    top: 400px;
+    left: 200px;
+}
+#obstacle6{
+    top: 500px;
+    left: 550px;
+}
+
+.meta{
+    background-image: url(sprites/flagSprite.png);
+    background-size: 120px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+    top: 10%;
+    left: 30%;
+    position: absolute;
+}
