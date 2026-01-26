@@ -8,19 +8,27 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div id="container">
-    <div id="character"></div>
-    <div id="obstacle1" class="enemy"></div>
-    <div id="obstacle2" class="enemy"></div>
-    <div id="obstacle3" class="enemy"></div>
-    <div id="obstacle4" class="enemy"></div>
-    <div id="obstacle5" class="enemy"></div>
-    <div id="obstacle6" class="enemy"></div>
+    <div id="contenedor">
+        <input type="button" onclick="empezarJuego()" value="START" id="botonStart"> 
+    </div>
 
-    <div id="objective" class="meta"></div>
-
+    <div id="informacion">
+        <table>
+            <tr>
+                <td>Puntos:</td>
+            </tr>
+            <tr>
+                <td>Velocidad de nave:<br> <span id="velocidadNave">0</span></td>
+            </tr>
+            <tr>
+                <td>Velocidad de meteoritos:<br> <span id="velocidadMeteoro">0</span></td>
+            </tr>
+        </table>
     </div>
     
     
 </body>
+
+<audio id="audioMenu" src="musica/Bergentrückung [KBn_BHAXF98].mp3" loop></audio>
+<audio id="audioJuego" src="musica/ASGORE [qrtt7mgwCTw].mp3" loop></audio>
 </html>
